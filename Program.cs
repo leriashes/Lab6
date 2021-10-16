@@ -321,6 +321,99 @@ namespace Lab6
 
 
 
+			//Работа с объектами класса Book
+			Console.WriteLine("\n\n\nРабота с объектами класса Book");
+
+			Book book_1 = new Book();   //Создание через конструктор без параметров
+
+			//Создание через конструкторы с параметрами
+			Book book_2 = new Book("Новый мир", author_2, 121, "Фантастика", publishing_2, 2012);
+			Book book_3 = new Book("Петька и Васька", author_3, 76, "Рассказы", reader_1, publishing_1, 2019);
+
+			//Печать созданных объектов
+			Console.Write("\nПечать данных  объектов\nbook_1 ");
+			book_1.Display();
+			Console.Write("\n\nbook_2 ");
+			book_2.Display();
+			Console.Write("\n\nbook_3 ");
+			book_3.Display();
+			Console.WriteLine();
+
+			//Ввод значений всех полей объекта
+			Console.WriteLine("\n\nВвод значений всех полей объекта");
+
+			book_1.Read();
+			Console.Write("\n\nbook_1 ");
+			book_1.Display();
+			Console.WriteLine();
+
+			//Инициализация значений
+			Console.Write("\n\nИнициализация значений");
+			book_1.Init("Петька и Кот", author_3, 65, "Ужасы", publishing_1, 2005);
+			Console.Write("\nbook_1 ");
+			book_1.Display();
+
+			book_3.Init("Васька и Пёс", author_2, 124, "Комедия", reader_3, publishing_2, 2012);
+			Console.Write("\n\nbook_3 ");
+			book_3.Display();
+			Console.WriteLine();
+
+			//Привязка читателя
+			Console.Write("\n\nПривязка читателя\nbook_2 ");
+			book_2.AddReader(reader_1);
+			book_2.Display();
+			Console.WriteLine();
+
+			//Проверка принадлежности книги читателю
+			Console.WriteLine("\n\nПроверка принадлежности книги читателю");
+			book_2.Display();
+			Console.WriteLine("\n\nи \n");
+			reader_1.Display("Full_name");
+			if (book_2.Belongs(reader_1))
+			{
+				Console.WriteLine("\n\nкнига у этого читателя.");
+			}
+			else
+			{
+				Console.WriteLine("\n\nкнига не у этого читателя.");
+			}
+
+			//Сравнение читателей книг
+			Console.WriteLine("\n\nСравнение читателей книг");
+			book_3.Display();
+			Console.WriteLine("\n\nи \n");
+			book_2.Display();
+			if (book_3.CmpReader(book_2))
+			{
+				Console.WriteLine("\n\nодин и тот же читатель.");
+			}
+			else
+			{
+				Console.WriteLine("\n\nразные читатели.");
+			}
+
+			//Отвязка читателя
+			Console.Write("\n\nОтвязка читателя\nbook_2 ");
+			book_2.AddReader(null);
+			book_2.Display();
+			Console.WriteLine();
+
+			//Проверка принадлежности книги читателю
+			Console.WriteLine("\n\nПроверка принадлежности книги читателю");
+			book_2.Display();
+			Console.WriteLine("\n\nи \n");
+			reader_1.Display("Full_name");
+			if (book_2.Belongs(reader_1))
+			{
+				Console.WriteLine("\n\nкнига у этого читателя.");
+			}
+			else
+			{
+				Console.WriteLine("\n\nкнига не у этого читателя.");
+			}
+
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
