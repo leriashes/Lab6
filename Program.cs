@@ -414,6 +414,46 @@ namespace Lab6
 
 
 
+			//Работа с массивами
+			Book[] books_mas1 = new Book[2];
+
+			for (int i = 0; i < 2; i++)
+			{
+				books_mas1[i] = new Book();
+			}
+
+			List<Book> books_mas2 = new List<Book>();
+
+			//Вывод объектов
+
+			//Первый массив
+			Console.WriteLine("\n\nbooks_mas1");
+			foreach (Book book in books_mas1)
+			{
+				book.Display();
+				Console.WriteLine("\n");
+			}
+
+			//Второй массив
+			Console.WriteLine("\nbooks_mas2");
+			books_mas2.Add(new Book("Васька и Пёс", author_2, 124, "Комедия", reader_3, publishing_2, 2012));
+			books_mas2.Add(book_2);
+			foreach (Book book in books_mas2)
+			{
+				book.Display();
+				Console.WriteLine("\n");
+			}
+
+			books_mas2.RemoveAt(0);
+
+			Console.WriteLine("\nbooks_mas2");
+			foreach (Book book in books_mas2)
+			{
+				book.Display();
+				Console.WriteLine("\n");
+			}
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
