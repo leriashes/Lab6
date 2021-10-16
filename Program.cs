@@ -121,6 +121,64 @@ namespace Lab6
 				Console.WriteLine(": нет.");
 			}
 
+
+
+			//Работа с объектами класса Author
+			Console.WriteLine("\n\n\nРабота с объектами класса Author");
+			Author author_1 = new Author(); //Создание через конструктор без параметров
+
+			//Создание через конструкторы с параметрами
+			Author author_2 = new Author("Петров Пётр Петрович", date_1, "Украина");
+			Author author_3 = new Author("Сидорова Светлана Сергеевна", 12, 12, 1972, "Беларусь");
+
+			//Печать созданных объектов
+			Console.Write("\nПечать данных объектов\nauthor_1 = ");
+			author_1.Display("all");
+			Console.Write("\nauthor_2 = ");
+			author_2.Display("all");
+			Console.Write("\nauthor_3 = ");
+			author_3.Display("all");
+			Console.WriteLine();
+
+			//Ввод значений всех полей объекта
+			Console.WriteLine("\n\nВвод значений всех полей объекта");
+
+			author_1.Read();
+			Console.Write("\nauthor_1 = ");
+			author_1.Display("all");
+			Console.WriteLine();
+
+			//Вывод значений полей в выбранном формате
+			Console.Write("\n\nВывод значений полей в выбранном формате (помимо полного вывода)\nauthor_1 (FullName) = ");
+			author_1.Display("FullName");
+			Console.Write("\nauthor_1 (FullName (Country)) = ");
+			author_1.Display("FullName (Country)");
+			Console.Write("\nauthor_1 (FullName (BirthDate)) = ");
+			author_1.Display("FullName (BirthDate)");
+			Console.WriteLine();
+
+			//Инициализация значений
+			Console.Write("\n\nИнициализация значений");
+			author_2.Init("Паркер Энн", date_1, "США");
+			Console.Write("\nauthor_2 = ");
+			author_2.Display("all");
+			Console.WriteLine();
+
+			//Проверка родился ли автор в заданной стране
+			Console.WriteLine("\n\nПроверка родился ли автор в заданной стране");
+			author_1.Display("all");
+			Console.Write(" и страна Россия");
+			if (author_1.BornIn("Россия"))
+			{
+				Console.WriteLine(": да.");
+			}
+			else
+			{
+				Console.WriteLine(": нет.");
+			}
+
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
