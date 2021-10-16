@@ -279,6 +279,48 @@ namespace Lab6
 
 
 
+			//Работа с объектами класса Publishing
+			Console.WriteLine("\n\n\nРабота с объектами класса Publishing");
+
+			Publishing publishing_1 = new Publishing(); //Создание через конструктор без параметров
+			Publishing publishing_2 = new Publishing("Издательство №2", "г. Барнаул");      //Создание через конструктор с параметрами
+
+			//Печать созданных объектов
+			Console.Write("\nПечать данных объектов\npublishing_1 = ");
+			publishing_1.Display();
+			Console.Write("\npublishing_2 = ");
+			publishing_2.Display();
+			Console.WriteLine();
+
+			//Ввод значений всех полей объекта
+			Console.WriteLine("\n\nВвод значений всех полей объекта");
+			publishing_1.Read();
+			Console.Write("\npublishing_1 = ");
+			publishing_1.Display();
+			Console.WriteLine();
+
+			//Инициализация значений
+			Console.Write("\n\nИнициализация значений");
+			publishing_1.Init("Паркер", "г. Вашингтон");
+			Console.Write("\npublishing_1 = ");
+			publishing_1.Display();
+			Console.WriteLine();
+
+			//Проверка находится ли издательство в заданном городе
+			Console.WriteLine("\n\nПроверка находится ли издательство в заданном городе");
+			publishing_1.Display();
+			Console.Write(" и г. Москва");
+			if (publishing_1.IsHere("г. Москва"))
+			{
+				Console.WriteLine(": да.");
+			}
+			else
+			{
+				Console.WriteLine(": нет.");
+			}
+
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
