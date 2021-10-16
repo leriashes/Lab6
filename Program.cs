@@ -179,6 +179,49 @@ namespace Lab6
 
 
 
+			//Работа с объектами класса Address
+			Console.WriteLine("\n\n\nРабота с объектами класса Address");
+
+			Address address_1 = new Address();  //Создание через конструктор без параметров
+			Address address_2 = new Address("г. Новосибирск", "ул. Сиреневая", 12, 4);      //Создание через конструкторы с параметрами
+
+			//Печать созданных объектов
+			Console.Write("\nПечать данных объектов\naddress_1 = ");
+			address_1.Display();
+			Console.Write("\naddress_2 = ");
+			address_2.Display();
+			Console.WriteLine();
+
+			//Ввод значений всех полей объекта
+			Console.WriteLine("\n\nВвод значений всех полей объекта");
+
+			address_1.Read();
+			Console.Write("\naddress_1 = ");
+			address_1.Display();
+			Console.WriteLine();
+
+			//Инициализация значений
+			Console.Write("\n\nИнициализация значений");
+			address_1.Init("г. Троицк", "ул. Текстильщиков", 6, 2);
+			Console.Write("\naddress_1 = ");
+			address_1.Display();
+			Console.WriteLine();
+
+			//Проверка совпадения города
+			Console.WriteLine("\n\nПроверка совпадения города");
+			address_1.Display();
+			Console.Write(" и г. Барнаул");
+			if (address_1.City("г. Барнаул"))
+			{
+				Console.WriteLine(": да.");
+			}
+			else
+			{
+				Console.WriteLine(": нет.");
+			}
+
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
