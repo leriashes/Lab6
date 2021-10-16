@@ -222,6 +222,63 @@ namespace Lab6
 
 
 
+			//Работа с объектами класса Reader
+			Console.WriteLine("\n\n\nРабота с объектами класса Reader");
+
+			Reader reader_1 = new Reader(); //Создание через конструктор без параметров
+
+			//Создание через конструкторы с параметрами
+			Reader reader_2 = new Reader("Петров Пётр Петрович", date_1, address_1, "0110 120954");
+			Reader reader_3 = new Reader("Сидорова Светлана Сергеевна", date_2, address_2, 987654);
+
+			//Печать созданных объектов
+			Console.Write("\nПечать данных объектов\nreader_1 = ");
+			reader_1.Display("all");
+			Console.Write("\nreader_2 = ");
+			reader_2.Display("all");
+			Console.Write("\nreader_3 = ");
+			reader_3.Display("all");
+			Console.WriteLine();
+
+			//Ввод значений всех полей объекта
+			Console.WriteLine("\n\nВвод значений всех полей объекта");
+			reader_1.Read();
+			Console.Write("\nreader_1 = ");
+			reader_1.Display("all");
+			Console.WriteLine();
+
+			//Вывод значений полей в выбранном формате
+			Console.Write("\n\nВывод значений полей в выбранном формате (помимо полного вывода)\nreader_1 (FullName) = ");
+			reader_1.Display("FullName");
+			Console.Write("\nreader_1 ([DocNumber] FullName) = ");
+			reader_1.Display("[DocNumber] FullName");
+			Console.Write("\nreader_1 (FullName (BirthDate)) = ");
+			reader_1.Display("FullName (BirthDate)");
+			Console.WriteLine();
+
+			//Инициализация значений
+			Console.Write("\n\nИнициализация значений");
+			reader_1.Init("Кузнецов Кирилл Корнеевич", date_3, address_1, "0112 765423");
+			Console.Write("\nreader_1 = ");
+			reader_1.Display("all");
+			Console.WriteLine();
+
+			//Проверка является ли дата днём рождения читателя
+			Console.WriteLine("\n\nПроверка является ли дата днём рождения читателя");
+			reader_3.Display("all");
+			Console.Write(" и ");
+			date_3.Display("DD.MM.YYYY");
+			if (reader_3.IsBirthday(date_3))
+			{
+				Console.WriteLine(": да.");
+			}
+			else
+			{
+				Console.WriteLine(": нет.");
+			}
+
+
+
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
 		}
