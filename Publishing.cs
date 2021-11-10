@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Publishing
+	struct Publishing
 	{
 		private String name;    //Название
 		private String city;    //Город
-
-		//Конструктор
-		public Publishing()
-		{
-			name = "Издательство №1";
-			city = "г. Москва";
-		}
 
 		//Конструктор с параметром
 		public Publishing(String name, String city)
