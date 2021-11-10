@@ -788,6 +788,47 @@ namespace Lab6
 			return (day == second_date.day && month == second_date.month && year <= second_date.year);
 		}
 
+		public void TimeToSec(ref int time)
+		{
+			time = sec + (min + hour * 60) * 60;
+		}
+
+		public void TimeToDays(out int time)
+		{
+			time = day;
+
+			for(int i = 1; i < month; i++)
+			{
+				if (i == 2)
+				{
+					time += 28;
+
+					if (year % 4 == 0)
+					{
+						time++;
+					}
+				}
+				else if (i == 4 || i == 6 || i == 9 || i == 11)
+				{
+					time += 30;
+				}
+				else
+				{
+					time += 31;
+				}
+			}
+
+			for(int i = 1; i < year; i++)
+			{
+				time += 365;
+
+				if (i % 4 == 0)
+				{
+					time++;
+				}
+			}
+		}
+
 		//Перегрузка оператора + Date+Date
 		public static Date operator +(Date a, Date b)
 		{

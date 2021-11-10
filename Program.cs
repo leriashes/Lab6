@@ -58,6 +58,19 @@ namespace Lab6
 			date_1.Year = 2005;
 			Console.WriteLine("date_1.year = {0:d}", date_1.Year);
 
+			Console.Write("\ndate_1 = ");
+			date_1.Display("all");
+
+			//Возврат значения через ref - переменная a должна быть проинициализированна перед вызовом метода
+			int a = 0;
+			date_1.TimeToSec(ref a);
+			Console.WriteLine("\n\na = {0:d}", a);
+
+			//Возврат значения через out - переменная b может быть не проинициализированна перед вызовом метода
+			int b;
+			date_1.TimeToDays(out b);
+			Console.WriteLine("\nb = {0:d}", b);
+
 			//Ввод только времени
 			Console.WriteLine("\n\nВвод только времени");
 
