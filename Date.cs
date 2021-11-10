@@ -15,6 +15,109 @@ namespace Lab6
 		private int month;  //Месяц
 		private int year;   //Год
 
+		//Свойства
+		public int Sec
+		{
+			get
+			{
+				return sec;
+			}		
+
+			set
+			{
+				if (value >= 0 && value < 60)
+				{
+					sec = value;
+				}
+			}
+		}
+
+		public int Min
+		{
+			get
+			{
+				return min;
+			}
+
+			set
+			{
+				if (value >= 0 && value < 60)
+				{
+					min = value;
+				}
+			}
+		}
+
+		public int Hour
+		{
+			get
+			{
+				return hour;
+			}
+
+			set
+			{
+				if (value >= 0 && value < 24)
+				{
+					hour = value;
+				}
+			}
+		}
+
+		public int Day
+		{
+			get
+			{
+				return day;
+			}
+
+			set
+			{
+				if (value >= 0 && value <= 31)
+				{
+					if (month == 0 || value > 0 && ((month == 4 || month == 6 || month == 9 || month == 11) && value <= 30 || month == 2 && (year % 4 == 0 && value == 29 || value <= 28) || value <= 31))
+					{
+						day = value;
+					}
+				}
+			}
+		}
+
+		public int Month
+		{
+			get
+			{
+				return month;
+			}
+
+			set
+			{
+				if (value >= 0 && value <= 12)
+				{
+					if (day == 0 || day > 0 && ((value == 4 || value == 6 || value == 9 || value == 11) && day <= 30 || value == 2 && (year % 4 == 0 && day == 29 || day <= 28) || day <= 31))
+					{
+						month = value;
+					}
+				}
+			}
+		}
+
+		public int Year
+		{
+			get
+			{
+				return year;
+			}
+
+			set
+			{
+				if (value >= 0)
+				{
+					year = value;
+				}
+			}
+		}
+
 		//Конструктор
 		public Date()
 		{
