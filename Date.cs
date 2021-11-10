@@ -94,7 +94,7 @@ namespace Lab6
 			{
 				if (value >= 0 && value <= 12)
 				{
-					if (day == 0 || day > 0 && ((value == 4 || value == 6 || value == 9 || value == 11) && day <= 30 || value == 2 && (year % 4 == 0 && day == 29 || day <= 28) || day <= 31))
+					if (day == 0 || day > 0 && ((value == 4 || value == 6 || value == 9 || value == 11) && day <= 30 || value == 2 && (year % 4 == 0 && day == 29 || day <= 28) || (value == 1 || value == 3 || value == 5 || value == 7 || value == 8 || value == 10 || value == 12) && day <= 31))
 					{
 						month = value;
 					}
@@ -111,7 +111,7 @@ namespace Lab6
 
 			set
 			{
-				if (value >= 0)
+				if (value >= 0 && ((month != 2 || day != 29) || value % 4 == 0))
 				{
 					year = value;
 				}
