@@ -28,6 +28,36 @@ namespace Lab6
 			date_3.Display("all");
 			Console.WriteLine();
 
+			//Работа со свойствами
+			Console.WriteLine("\nРабота со свойствами объекта date_1");
+			date_1.Sec = 121;
+			Console.WriteLine("date_1.sec = {0:d}", date_1.Sec);
+			date_1.Sec = 4;
+			Console.WriteLine("date_1.sec = {0:d}\n", date_1.Sec);
+
+			date_1.Min = 60;
+			Console.WriteLine("date_1.min = {0:d}", date_1.Min);
+			date_1.Min = 12;
+			Console.WriteLine("date_1.min = {0:d}\n", date_1.Min);
+
+			date_1.Hour = 28;
+			Console.WriteLine("date_1.hour = {0:d}", date_1.Hour);
+			date_1.Hour = 13;
+			Console.WriteLine("date_1.hour = {0:d}\n", date_1.Hour);
+
+			date_1.Day = -5;
+			Console.WriteLine("date_1.day = {0:d}", date_1.Day);
+			date_1.Day = 30;
+			Console.WriteLine("date_1.day = {0:d}\n", date_1.Day);
+
+			date_1.Month = 2;
+			Console.WriteLine("date_1.month = {0:d}", date_1.Month);
+			date_1.Month = 12;
+			Console.WriteLine("date_1.month = {0:d}\n", date_1.Month);
+
+			date_1.Year = 2005;
+			Console.WriteLine("date_1.year = {0:d}", date_1.Year);
+
 			//Ввод только времени
 			Console.WriteLine("\n\nВвод только времени");
 
