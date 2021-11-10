@@ -683,5 +683,32 @@ namespace Lab6
 		{
 			return (day == second_date.day && month == second_date.month && year <= second_date.year);
 		}
+
+		//Перегрузка оператора + Date+Date
+		public static Date operator +(Date a, Date b)
+		{
+			return a.Add(b);
+		}
+
+		//Перегрузка оператора + int+Date
+		public static Date operator +(Date a, int i)
+		{
+			Date b = new Date(i, 0, 0, 0, 0, 0);
+			return a.Add(b);
+		}
+
+		//Перегрузка оператора + Date+int
+		public static Date operator +(int i, Date b)
+		{
+			Date a = new Date(i, 0, 0, 0, 0, 0);
+			return a.Add(b);
+		}
+
+		//Перегрузка оператора ++
+		public static Date operator ++(Date date)
+		{
+			Date a = new Date(1, 0, 0);
+			return date.Add(a);
+		}
 	}
 }

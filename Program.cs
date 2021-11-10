@@ -95,6 +95,33 @@ namespace Lab6
 			(date_1.Add(date_3)).Display("all");
 			Console.WriteLine();
 
+			//Прибавление времени к дате
+			Console.Write("\n\nПрибавление времени date_3 к дате date_1 (Date + Date): ");
+			(date_1 + date_3).Display("all");
+			Console.WriteLine();
+
+			//Прибавление времени к дате
+			Console.Write("\n\nПрибавление 2 часов 30 минут к дате date_1 (Date + Int): ");
+			(date_1 + 9000).Display("all");
+			Console.WriteLine();
+
+			//Прибавление времени к дате
+			Console.Write("\n\nПрибавление 2 часов 30 минут к дате date_1 (Int + Date): ");
+			(9000 + date_1).Display("all");
+			Console.WriteLine();
+
+			//Прибавление времени к дате
+			Console.Write("\n\nПрибавление 1 дня к дате date_1 (++Date): ");
+			(++date_1).Display("all");
+			Console.WriteLine();
+
+			//Прибавление времени к дате
+			Console.Write("\n\nПрибавление 1 дня к дате date_1 (Date++): ");
+			(date_1++).Display("all");
+			Console.Write("\nПосле выполнения операции: ");
+			(date_1).Display("all");
+			Console.WriteLine();
+
 			//Проверка является дата годовщиной другой
 			Console.WriteLine("\n\nПроверка является ли вторая дата 'годовщиной' первой\n");
 			date_1.Display("all");
