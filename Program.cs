@@ -351,15 +351,8 @@ namespace Lab6
 			//Работа с объектами класса Publishing
 			Console.WriteLine("\n\n\nРабота с объектами класса Publishing");
 
-			Publishing publishing_1 = new Publishing(); //Создание через конструктор без параметров
-			Publishing publishing_2 = new Publishing("Издательство №2", "г. Барнаул");      //Создание через конструктор с параметрами
-
-			//Печать созданных объектов
-			Console.Write("\nПечать данных объектов\npublishing_1 = ");
-			publishing_1.Display();
-			Console.Write("\npublishing_2 = ");
-			publishing_2.Display();
-			Console.WriteLine();
+			Publishing publishing_1 = new Publishing();
+			Publishing publishing_2 = new Publishing("Издательство №2", "г. Барнаул");
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
@@ -368,11 +361,43 @@ namespace Lab6
 			publishing_1.Display();
 			Console.WriteLine();
 
+			Console.Write("\npublishing_2 = ");
+			publishing_2.Display();
+			Console.WriteLine();
+
+
+			publishing_1 = publishing_2;
+
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
-			publishing_1.Init("Паркер", "г. Вашингтон");
-			Console.Write("\npublishing_1 = ");
+			publishing_2.Init("Паркер", "г. Вашингтон");
+			Console.Write("\npublishing_2 = ");
+			publishing_2.Display();
+			Console.WriteLine();
+
+			Console.Write("\npublishing_1 (не изменяется при изменении publishing_2) = ");
 			publishing_1.Display();
+			Console.WriteLine();
+
+			//Присваивание объектов класса Address
+			Console.Write("\n\naddress_1 = ");
+			address_1.Display();
+			Console.WriteLine();
+
+			Console.Write("\naddress_2 = ");
+			address_2.Display();
+			Console.WriteLine();
+
+			address_1 = address_2;
+
+			address_2.Init("г. Барнаул", "пр-т Ленина", 13, 5);
+
+			Console.Write("\naddress_1 (изменяется при изменении address_2) = ");
+			address_1.Display();
+			Console.WriteLine();
+
+			Console.Write("\naddress_2 = ");
+			address_2.Display();
 			Console.WriteLine();
 
 			//Проверка находится ли издательство в заданном городе
