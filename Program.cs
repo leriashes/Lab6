@@ -65,8 +65,7 @@ namespace Lab6
 
 			//Получение текущей даты и времени
 			Console.Write("\n\nТекущая дата и время\ndate_2 = ");
-			date_2.Now();
-			date_2.Display("all");
+			date_2.Now().Display("all");
 
 			//Сравнение дат
 			Console.WriteLine("\n\n\nСравнение дат (сколько времени от первой даты до второй)\n");

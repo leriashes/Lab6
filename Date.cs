@@ -434,10 +434,11 @@ namespace Lab6
 		}
 
 		//Текущая дата
-		public void Now()
+		public Date Now()
 		{
 			DateTime today = DateTime.Now;
 			Init(today.Second, today.Minute, today.Hour, today.Day, today.Month, today.Year);
+			return this;
 		}
 
 		//Сравнение дат
