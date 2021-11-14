@@ -481,7 +481,7 @@ namespace Lab6
 				Console.WriteLine("\n\nкнига не у этого читателя.");
 			}
 
-
+			Console.WriteLine($"\n\nКниг в бибилиотеке: {Book.Counter}");
 
 			//Работа с массивами
 			Book[] books_mas1 = new Book[2];
@@ -522,6 +522,7 @@ namespace Lab6
 				Console.WriteLine("\n");
 			}
 
+			Console.WriteLine($"\n\nКниг в бибилиотеке: {Book.Counter}");
 
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();

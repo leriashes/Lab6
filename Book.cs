@@ -8,6 +8,7 @@ namespace Lab6
 {
 	class Book
 	{
+		private static int counter = 0;     //Счётчик книг
 		private String title;           //Название книги
 		private Author author;      //Автор
 		private int pages_number;       //Количество страниц
@@ -15,6 +16,15 @@ namespace Lab6
 		private Reader reader;  //Читатель
 		private Publishing publishing;  //Издательство
 		private int publ_year;          //Год
+		private int id;     //ID книги
+
+		public static int Counter
+		{
+			get
+			{
+				return counter;
+			}
+		}
 
 		//Конструктор
 		public Book()
@@ -25,6 +35,8 @@ namespace Lab6
 			genre = "Сказки";
 			publishing = new Publishing();
 			publ_year = 2021;
+			counter++;
+			id = counter;
 		}
 
 		//Конструктор с параметром
@@ -36,6 +48,8 @@ namespace Lab6
 			this.genre = genre;
 			this.publishing = publishing;
 			this.publ_year = Math.Abs(publication_year);
+			counter++;
+			id = counter;
 		}
 
 		//Конструктор с параметром
@@ -48,6 +62,8 @@ namespace Lab6
 			this.AddReader(reader);
 			this.publishing = publishing;
 			this.publ_year = Math.Abs(publication_year);
+			counter++;
+			id = counter;
 		}
 
 		//Инициализация всех полей
@@ -171,7 +187,8 @@ namespace Lab6
 		//Вывод значений всех полей
 		public void Display()
 		{
-			Console.Write($"Название: \"{title}\"");
+			Console.Write($"ID {id}");
+			Console.Write($"\nНазвание: \"{title}\"");
 			Console.Write($"\nЖанр: {genre}");
 			Console.Write($"\nКоличество страниц: {pages_number}");
 			Console.Write($"\nГод публикации: {publ_year}");
