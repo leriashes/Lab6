@@ -526,6 +526,30 @@ namespace Lab6
 
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
+
+			Book kniga = new Book();
+			Console.Write($"\n\nКниг в библиотеке:{Book.Counter} \nВремя, на которое можно брать книги: {Book.Time}");
+			Book.Time = 14;
+			Book[] knigi = new Book[3];
+			for (int i = 0; i < 3; i++)
+			{
+				knigi[i] = new Book();
+			}
+			Console.Write($"\n\nКниг в библиотеке:{Book.Counter} \nВремя, на которое можно брать книги: {Book.Time}\n\n");
+
+			Book.BorrowBook(ref kniga, reader_1, Date.Today());
+			kniga.Display();
+			Console.Write($"\n\nКоличество выданных книг читателю reader_3: {Book.BorrowBook(ref knigi, 2, reader_3, Date.Today())}\n\n");
+			Console.Write($"\n\nКоличество выданных книг читателю reader_2: {Book.BorrowBook(ref knigi, 3, reader_2, Date.Today())}\n\n");
+
+			for (int i = 0; i < 3; i++)
+			{
+				Console.Write("\n\n");
+				knigi[i].Display();
+			}
+
+			Console.Write("\nНажмите любую клавишу...");
+			Console.ReadKey();
 		}
 	}
 }

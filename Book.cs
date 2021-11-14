@@ -9,6 +9,8 @@ namespace Lab6
 	class Book
 	{
 		private static int counter = 0;     //Счётчик книг
+		private static int time = 30;		//Время, на которое можно брать книги
+
 		private String title;           //Название книги
 		private Author author;      //Автор
 		private int pages_number;       //Количество страниц
@@ -17,13 +19,59 @@ namespace Lab6
 		private Publishing publishing;  //Издательство
 		private int publ_year;          //Год
 		private int id;     //ID книги
+		private Date borrow_date;		//Дата взятия книги
 
+		//Свойства
 		public static int Counter
 		{
 			get
 			{
 				return counter;
 			}
+		}
+
+		public static int Time
+		{
+			get
+			{
+				return time;
+			}
+
+			set
+			{
+				if (value >= 1)
+				{
+					time = value;
+				}
+			}
+		}
+
+		public static bool BorrowBook(ref Book book, Reader reader, Date date)
+		{
+			bool result = false;
+
+			if (book.InLib())
+			{
+				book.AddReader(reader);
+				book.borrow_date = date;
+				result = true;
+			}
+
+			return result;
+		}
+
+		public static int BorrowBook(ref Book[] book, int num, Reader reader, Date date)
+		{
+			int result = 0;
+
+			for (int i = 0; i < num; i++)
+			{
+				if (BorrowBook(ref book[i], reader, date))
+				{
+					result += 1;
+				}
+			}
+			return result;
 		}
 
 		//Конструктор
@@ -37,6 +85,7 @@ namespace Lab6
 			publ_year = 2021;
 			counter++;
 			id = counter;
+			borrow_date = new Date();
 		}
 
 		//Конструктор с параметром
@@ -50,6 +99,7 @@ namespace Lab6
 			this.publ_year = Math.Abs(publication_year);
 			counter++;
 			id = counter;
+			borrow_date = new Date();
 		}
 
 		//Конструктор с параметром
@@ -64,6 +114,7 @@ namespace Lab6
 			this.publ_year = Math.Abs(publication_year);
 			counter++;
 			id = counter;
+			borrow_date = new Date();
 		}
 
 		//Инициализация всех полей
@@ -200,6 +251,11 @@ namespace Lab6
 			{
 				Console.Write("\nЧитатель: ");
 				reader.Display("[DocNumber] FullName");
+				Console.Write("\nДата взятия книги: ");
+				borrow_date.Display("DD.MM.YYYY");
+				Console.Write("\nСрок сдачи книги: ");
+				Date plus = new Date(time, 0, 0);
+				(borrow_date + plus).Display("DD.MM.YYYY");
 			}
 		}
 

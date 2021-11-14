@@ -118,6 +118,13 @@ namespace Lab6
 			}
 		}
 
+		public static Date Today()
+		{
+			Date today = new Date();
+			today.Now();
+			return today;
+		}
+
 		//Конструктор
 		public Date()
 		{
