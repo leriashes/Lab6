@@ -396,7 +396,7 @@ namespace Lab6
 			Book book_1 = new Book();   //Создание через конструктор без параметров
 
 			//Создание через конструкторы с параметрами
-			Book book_2 = new Book("Новый мир", author_2, 121, "Фантастика", publishing_2, 2012);
+			Book book_2 = new Book("Новый мир");
 			Book book_3 = new Book("Петька и Васька", author_3, 76, "Рассказы", reader_1, publishing_1, 2019);
 
 			//Печать созданных объектов
