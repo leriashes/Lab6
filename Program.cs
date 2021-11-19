@@ -488,7 +488,7 @@ namespace Lab6
 
 			for (int i = 0; i < 2; i++)
 			{
-				books_mas1[i] = new Book();
+				books_mas1[i] = new Book("Новая книга");
 			}
 
 			List<Book> books_mas2 = new List<Book>();
