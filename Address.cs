@@ -13,6 +13,8 @@ namespace Lab6
 		private int house;      //Номер дома
 		private int flat;       //Номер квартиры
 
+		static Exception ex;
+
 		//Конструктор
 		public Address()
 		{
@@ -46,19 +48,38 @@ namespace Lab6
 			bool f = true;
 
 			String str;
-
+			
 			Console.Write("Введите название населённого пункта (например: г. Барнаул): ");
 			do
 			{
-				city = Console.ReadLine();
+				try
+				{
+					city = Console.ReadLine();
 
-				if (city.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < city.Length; i++)
+					{
+						if (city.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < city.Length - 1 && city.Substring(i + 1, 1) == " " || i == city.Length - 1)
+							{
+								city = city.Substring(0, i) + city.Substring(i + 1, city.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (city.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
@@ -66,15 +87,34 @@ namespace Lab6
 			Console.Write("\nВведите название улицы (например: ул. Попова): ");
 			do
 			{
-				street = Console.ReadLine();
+				try
+				{
+					street = Console.ReadLine();
 
-				if (street.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < street.Length; i++)
+					{
+						if (street.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < street.Length - 1 && street.Substring(i + 1, 1) == " " || i == street.Length - 1)
+							{
+								street = street.Substring(0, i) + street.Substring(i + 1, street.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (street.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 

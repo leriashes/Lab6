@@ -13,6 +13,8 @@ namespace Lab6
 		private Address address;    //Адрес
 		private String doc_number;      //Номер документа, удостоверяющего личность
 
+		static Exception ex;
+
 		//Конструктор
 		public Reader()
 		{
@@ -66,15 +68,34 @@ namespace Lab6
 			Console.Write("Введите ФИО читателя: ");
 			do
 			{
-				full_name = Console.ReadLine();
+				try
+				{
+					full_name = Console.ReadLine();
 
-				if (full_name.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < full_name.Length; i++)
+					{
+						if (full_name.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < full_name.Length - 1 && full_name.Substring(i + 1, 1) == " " || i == full_name.Length - 1)
+							{
+								full_name = full_name.Substring(0, i) + full_name.Substring(i + 1, full_name.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (full_name.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
@@ -88,15 +109,34 @@ namespace Lab6
 			Console.Write("\nВведите номер документа, удостовряющего личность: ");
 			do
 			{
-				doc_number = Console.ReadLine();
+				try
+				{
+					doc_number = Console.ReadLine();
 
-				if (doc_number.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < doc_number.Length; i++)
+					{
+						if (doc_number.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < doc_number.Length - 1 && doc_number.Substring(i + 1, 1) == " " || i == doc_number.Length - 1)
+							{
+								doc_number = doc_number.Substring(0, i) + doc_number.Substring(i + 1, doc_number.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (doc_number.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 		}

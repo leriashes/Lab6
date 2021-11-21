@@ -11,6 +11,8 @@ namespace Lab6
 		private String name;    //Название
 		private String city;    //Город
 
+		static Exception ex;
+
 		//Конструктор
 		public Publishing()
 		{
@@ -40,15 +42,34 @@ namespace Lab6
 			Console.Write("Введите название издательства: ");
 			do
 			{
-				name = Console.ReadLine();
+				try
+				{
+					name = Console.ReadLine();
 
-				if (name.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < name.Length; i++)
+					{
+						if (name.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < name.Length - 1 && name.Substring(i + 1, 1) == " " || i == name.Length - 1)
+							{
+								name = name.Substring(0, i) + name.Substring(i + 1, name.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (name.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
@@ -56,15 +77,34 @@ namespace Lab6
 			Console.Write("\nВведите населённый пункт, в котором находится издательство (например: г. Барнаул): ");
 			do
 			{
-				city = Console.ReadLine();
+				try
+				{
+					city = Console.ReadLine();
 
-				if (city.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < city.Length; i++)
+					{
+						if (city.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < city.Length - 1 && city.Substring(i + 1, 1) == " " || i == city.Length - 1)
+							{
+								city = city.Substring(0, i) + city.Substring(i + 1, city.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (city.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 		}

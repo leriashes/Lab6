@@ -12,6 +12,8 @@ namespace Lab6
 		private Date birth;         //Дата рождения
 		private String country; //Страна
 
+		static Exception ex;
+
 		//Конструктор
 		public Author()
 		{
@@ -60,15 +62,34 @@ namespace Lab6
 			Console.Write("Введите ФИО автора: ");
 			do
 			{
-				full_name = Console.ReadLine();
+				try
+				{
+					full_name = Console.ReadLine();
 
-				if (full_name.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < full_name.Length; i++)
+					{
+						if (full_name.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < full_name.Length - 1 && full_name.Substring(i + 1, 1) == " " || i == full_name.Length - 1)
+							{
+								full_name = full_name.Substring(0, i) + full_name.Substring(i + 1, full_name.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (full_name.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
@@ -79,15 +100,34 @@ namespace Lab6
 			Console.Write("\nВведите страну происхождения автора: ");
 			do
 			{
-				country = Console.ReadLine();
+				try
+				{
+					country = Console.ReadLine();
 
-				if (country.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < country.Length; i++)
+					{
+						if (country.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < country.Length - 1 && country.Substring(i + 1, 1) == " " || i == country.Length - 1)
+							{
+								country = country.Substring(0, i) + country.Substring(i + 1, country.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (country.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 		}

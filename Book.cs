@@ -19,7 +19,9 @@ namespace Lab6
 		private Publishing publishing;  //Издательство
 		private int publ_year;          //Год
 		private int id;     //ID книги
-		private Date borrow_date;		//Дата взятия книги
+		private Date borrow_date;       //Дата взятия книги
+
+		static Exception ex;
 
 		//Свойства
 		public static int Counter
@@ -164,15 +166,34 @@ namespace Lab6
 			Console.Write("Введите название книги: ");
 			do
 			{
-				title = Console.ReadLine();
+				try
+				{
+					title = Console.ReadLine();
 
-				if (title.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < title.Length; i++)
+					{
+						if (title.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < title.Length - 1 && title.Substring(i + 1, 1) == " " || i == title.Length - 1)
+							{
+								title = title.Substring(0, i) + title.Substring(i + 1, title.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (title.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
@@ -208,15 +229,34 @@ namespace Lab6
 			Console.Write("\nВведите жанр: ");
 			do
 			{
-				genre = Console.ReadLine();
+				try
+				{
+					genre = Console.ReadLine();
 
-				if (genre.Length == 0)
-				{
-					Console.Write("\nОшибка ввода! Повторите ввод: ");
+					for (int i = 0; i < genre.Length; i++)
+					{
+						if (genre.Substring(i, 1) == " ")
+						{
+							if (i == 0 || i < genre.Length - 1 && genre.Substring(i + 1, 1) == " " || i == genre.Length - 1)
+							{
+								genre = genre.Substring(0, i) + genre.Substring(i + 1, genre.Length - i - 1);
+								i--;
+							}
+						}
+					}
+
+					if (genre.Length == 0)
+					{
+						throw ex = new Exception("\nОшибка ввода! Повторите ввод: ");
+					}
+					else
+					{
+						f = false;
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					f = false;
+					Console.Write(ex.Message);
 				}
 			} while (f);
 
