@@ -550,6 +550,98 @@ namespace Lab6
 
 			Console.Write("\nНажмите любую клавишу...");
 			Console.ReadKey();
+
+			//Работа с одномерным массивом
+			Book[] odnm_mas = new Book[3];
+			for (int i = 0; i < 3; i++)
+			{
+				odnm_mas[i] = new Book();
+			}
+			Console.Write($"Работа с одномерным массивом\nКниг в библиотеке:{Book.Counter} ");
+
+			for (int i = 0; i < 3; i++)
+			{
+				Console.Write($"\n\nodnm_mas[{i}] ");
+				odnm_mas[i].Display();
+			}
+
+			Console.Write("\n\nВведите индекс элемента массива для ввода: ");
+			int k, d;
+			String index;
+			do
+			{
+				Console.Write("\n\nВведите индекс элемента массива для ввода: ");
+				index = Console.ReadLine();
+				try
+				{
+					k = int.Parse(index);
+				}
+				catch (FormatException)
+				{
+					k = 0;
+				}
+			} while (k < 0 || k > 2);
+
+			Console.Write($"{k}\n\nВвод информации о книге odnm_mas[{k}]\n");
+			odnm_mas[k].Read();
+
+			Console.Write($"\n\nodnm_mas[{k}] ");
+			odnm_mas[k].Display();
+
+			//Работа с двумерным массивом
+			Book[,] dvum_mas = new Book[2,2];
+			for (int i = 0; i < 2; i++)
+			{
+				for (int j = 0; j < 2; j++)
+				{
+					dvum_mas[i,j] = new Book();
+				}
+			}
+			Console.Write($"Работа с двумерным массивом\nКниг в библиотеке:{Book.Counter} ");
+
+			for (int i = 0; i < 2; i++)
+			{
+				for (int j = 0; j < 2; j++)
+				{
+					Console.Write($"\n\ndvum_mas[{i},{j}] ");
+					dvum_mas[i,j].Display();
+				}
+			}
+
+			do
+			{
+				Console.Write("\n\nВведите номер строки двумерного массива: ");
+				index = Console.ReadLine();
+				try
+				{
+					k = int.Parse(index);
+				}
+				catch (FormatException)
+				{
+					k = 0;
+				}
+			} while (k < 0 || k > 1);
+			Console.Write($"{k}");
+
+			do
+			{
+				Console.Write("\n\nВведите номер столбца двумерного массива: ");
+				index = Console.ReadLine();
+				try
+				{
+					d = int.Parse(index);
+				}
+				catch (FormatException)
+				{
+					d = 0;
+				}
+			} while (d < 0 || d > 1);
+
+			Console.Write($"{d}\n\nВвод информации о книге dvum_mas[{k},{d}]\n");
+			dvum_mas[k,d].Read();
+
+			Console.Write($"\n\ndvum_mas[{k},{d}]");
+			dvum_mas[k,d].Display();
 		}
 	}
 }
