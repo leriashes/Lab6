@@ -594,6 +594,13 @@ namespace Lab6
 			ForeignBook fbook1 = new ForeignBook();
 
 			fbook1.Init("Black Beauty", fauthor, 289, "Рассказы", publishing_1, 2019, "Английский");
+
+			book_1 = (Book)book_2.Clone();
+			Console.Write("\nbook_1 {0:s}\n", book_1);
+			Console.Write("\nbook_2 {0:s}\n", book_2);
+			book_2.Init("Black Beauty", author_1, 289, "Рассказы", publishing_1, 2019);
+			Console.Write("\nbook_2 {0:s}\n", book_2);
+			Console.Write("\nbook_1 {0:s}\n", book_1);
 		}
 	}
 }

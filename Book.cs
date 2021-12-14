@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Book : ClassDisplay
+	class Book : ClassDisplay, ICloneable
 	{
 		protected static int counter = 0;     //Счётчик книг
 		protected static int time = 30;		//Время, на которое можно брать книги
@@ -131,6 +131,11 @@ namespace Lab6
 			counter++;
 			id = counter;
 			borrow_date = new Date();
+		}
+
+		public object Clone()
+		{  
+			return new Book(title, author, pages_number, genre, reader, publishing, publ_year);
 		}
 
 		//Инициализация всех полей
