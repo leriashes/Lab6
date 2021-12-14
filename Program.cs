@@ -31,7 +31,7 @@ namespace Lab6
 			//Работа со свойствами
 			Console.WriteLine("\nРабота со свойствами объекта date_1");
 			date_1.Sec = 121;
-			Console.WriteLine("date_1.sec = {0:d}", date_1.Sec);
+			Console.WriteLine("date_1.sec = ", date_1.Sec);
 			date_1.Sec = 4;
 			Console.WriteLine("date_1.sec = {0:d}\n", date_1.Sec);
 
@@ -201,21 +201,15 @@ namespace Lab6
 			Author author_3 = new Author("Сидорова Светлана Сергеевна", 12, 12, 1972, "Беларусь");
 
 			//Печать созданных объектов
-			Console.Write("\nПечать данных объектов\nauthor_1 = ");
-			author_1.Display("all");
-			Console.Write("\nauthor_2 = ");
-			author_2.Display("all");
-			Console.Write("\nauthor_3 = ");
-			author_3.Display("all");
-			Console.WriteLine();
+			Console.Write("\nПечать данных объектов\nauthor_1 = {0:s}", author_1);
+			Console.Write("\nauthor_2 = {0:s}", author_2);
+			Console.Write("\nauthor_3 = {0:s}\n", author_3);
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
 
 			author_1.Read();
-			Console.Write("\nauthor_1 = ");
-			author_1.Display("all");
-			Console.WriteLine();
+			Console.Write("\nauthor_1 = {0:s}\n", author_1);
 
 			//Вывод значений полей в выбранном формате
 			Console.Write("\n\nВывод значений полей в выбранном формате (помимо полного вывода)\nauthor_1 (FullName) = ");
@@ -229,14 +223,10 @@ namespace Lab6
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
 			author_2.Init("Паркер Энн", date_1, "США");
-			Console.Write("\nauthor_2 = ");
-			author_2.Display("all");
-			Console.WriteLine();
+			Console.Write("\nauthor_2 = {0:s}\n", author_2);
 
 			//Проверка родился ли автор в заданной стране
-			Console.WriteLine("\n\nПроверка родился ли автор в заданной стране");
-			author_1.Display("all");
-			Console.Write(" и страна Россия");
+			Console.Write("\n\nПроверка родился ли автор в заданной стране\n{0:s} и страна Россия", author_1);
 			if (author_1.BornIn("Россия"))
 			{
 				Console.WriteLine(": да.");
@@ -255,31 +245,22 @@ namespace Lab6
 			Address address_2 = new Address("г. Новосибирск", "ул. Сиреневая", 12, 4);      //Создание через конструкторы с параметрами
 
 			//Печать созданных объектов
-			Console.Write("\nПечать данных объектов\naddress_1 = ");
-			address_1.Display();
-			Console.Write("\naddress_2 = ");
-			address_2.Display();
-			Console.WriteLine();
+			Console.Write("\nПечать данных объектов\naddress_1 = {0:s}", address_1);
+			Console.Write("\naddress_2 = {0:s}\n", address_2);
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
 
 			address_1.Read();
-			Console.Write("\naddress_1 = ");
-			address_1.Display();
-			Console.WriteLine();
+			Console.Write("\naddress_1 = {0:s}\n", address_1);
 
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
 			address_1.Init("г. Троицк", "ул. Текстильщиков", 6, 2);
-			Console.Write("\naddress_1 = ");
-			address_1.Display();
-			Console.WriteLine();
+			Console.Write("\naddress_1 = {0:s}\n", address_1);
 
 			//Проверка совпадения города
-			Console.WriteLine("\n\nПроверка совпадения города");
-			address_1.Display();
-			Console.Write(" и г. Барнаул");
+			Console.Write("\n\nПроверка совпадения города\n{0:s} и г. Барнаул", address_1);
 			if (address_1.City("г. Барнаул"))
 			{
 				Console.WriteLine(": да.");
@@ -301,20 +282,14 @@ namespace Lab6
 			Reader reader_3 = new Reader("Сидорова Светлана Сергеевна", date_2, address_2, 987654);
 
 			//Печать созданных объектов
-			Console.Write("\nПечать данных объектов\nreader_1 = ");
-			reader_1.Display("all");
-			Console.Write("\nreader_2 = ");
-			reader_2.Display("all");
-			Console.Write("\nreader_3 = ");
-			reader_3.Display("all");
-			Console.WriteLine();
+			Console.Write("\nПечать данных объектов\nreader_1 = {0:s}", reader_1);
+			Console.Write("\nreader_2 = {0:s}", reader_2);
+			Console.Write("\nreader_3 = {0:s}\n", reader_3);
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
 			reader_1.Read();
-			Console.Write("\nreader_1 = ");
-			reader_1.Display("all");
-			Console.WriteLine();
+			Console.Write("\nreader_1 = {0:s}\n", reader_1);
 
 			//Вывод значений полей в выбранном формате
 			Console.Write("\n\nВывод значений полей в выбранном формате (помимо полного вывода)\nreader_1 (FullName) = ");
@@ -328,15 +303,10 @@ namespace Lab6
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
 			reader_1.Init("Кузнецов Кирилл Корнеевич", date_3, address_1, "0112 765423");
-			Console.Write("\nreader_1 = ");
-			reader_1.Display("all");
-			Console.WriteLine();
+			Console.Write("\nreader_1 = {0:s}\n", reader_1);
 
 			//Проверка является ли дата днём рождения читателя
-			Console.WriteLine("\n\nПроверка является ли дата днём рождения читателя");
-			reader_3.Display("all");
-			Console.Write(" и ");
-			date_3.Display("DD.MM.YYYY");
+			Console.Write("\n\nПроверка является ли дата днём рождения читателя\n{0:s} и {1:s}", reader_3, date_3);
 			if (reader_3.IsBirthday(date_3))
 			{
 				Console.WriteLine(": да.");
@@ -355,30 +325,21 @@ namespace Lab6
 			Publishing publishing_2 = new Publishing("Издательство №2", "г. Барнаул");      //Создание через конструктор с параметрами
 
 			//Печать созданных объектов
-			Console.Write("\nПечать данных объектов\npublishing_1 = ");
-			publishing_1.Display();
-			Console.Write("\npublishing_2 = ");
-			publishing_2.Display();
-			Console.WriteLine();
+			Console.Write("\nПечать данных объектов\npublishing_1 = {0:s}", publishing_1);
+			Console.Write("\npublishing_2 = {0:s}\n", publishing_2);
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
 			publishing_1.Read();
-			Console.Write("\npublishing_1 = ");
-			publishing_1.Display();
-			Console.WriteLine();
+			Console.Write("\npublishing_1 = {0:s}\n", publishing_1);
 
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
 			publishing_1.Init("Паркер", "г. Вашингтон");
-			Console.Write("\npublishing_1 = ");
-			publishing_1.Display();
-			Console.WriteLine();
+			Console.Write("\npublishing_1 = {0:s}\n", publishing_1);
 
 			//Проверка находится ли издательство в заданном городе
-			Console.WriteLine("\n\nПроверка находится ли издательство в заданном городе");
-			publishing_1.Display();
-			Console.Write(" и г. Москва");
+			Console.Write("\n\nПроверка находится ли издательство в заданном городе\n{0:s} и г. Москва", publishing_1);
 			if (publishing_1.IsHere("г. Москва"))
 			{
 				Console.WriteLine(": да.");
@@ -400,43 +361,30 @@ namespace Lab6
 			Book book_3 = new Book("Петька и Васька", author_3, 76, "Рассказы", reader_1, publishing_1, 2019);
 
 			//Печать созданных объектов
-			Console.Write("\nПечать данных  объектов\nbook_1 ");
-			book_1.Display();
-			Console.Write("\n\nbook_2 ");
-			book_2.Display();
-			Console.Write("\n\nbook_3 ");
-			book_3.Display();
-			Console.WriteLine();
+			Console.Write("\nПечать данных  объектов\nbook_1 {0:s}", book_1);
+			Console.Write("\n\nbook_2 {0:s}", book_2);
+			Console.Write("\n\nbook_3 {0:s}\n", book_3);
 
 			//Ввод значений всех полей объекта
 			Console.WriteLine("\n\nВвод значений всех полей объекта");
 
 			book_1.Read();
-			Console.Write("\n\nbook_1 ");
-			book_1.Display();
-			Console.WriteLine();
+			Console.Write("\n\nbook_1 {0:s}\n", book_1);
 
 			//Инициализация значений
 			Console.Write("\n\nИнициализация значений");
 			book_1.Init("Петька и Кот", author_3, 65, "Ужасы", publishing_1, 2005);
-			Console.Write("\nbook_1 ");
-			book_1.Display();
+			Console.Write("\nbook_1 {0:s}", book_1);
 
 			book_3.Init("Васька и Пёс", author_2, 124, "Комедия", reader_3, publishing_2, 2012);
-			Console.Write("\n\nbook_3 ");
-			book_3.Display();
-			Console.WriteLine();
+			Console.Write("\n\nbook_3 {0:s}\n", book_3);
 
 			//Привязка читателя
-			Console.Write("\n\nПривязка читателя\nbook_2 ");
 			book_2.AddReader(reader_1);
-			book_2.Display();
-			Console.WriteLine();
+			Console.Write("\n\nПривязка читателя\nbook_2 {0:s}\n", book_2);
 
 			//Проверка принадлежности книги читателю
-			Console.WriteLine("\n\nПроверка принадлежности книги читателю");
-			book_2.Display();
-			Console.WriteLine("\n\nи \n");
+			Console.Write("\n\nПроверка принадлежности книги читателю\n{0:s}\n\nи \n\n", book_2);
 			reader_1.Display("Full_name");
 			if (book_2.Belongs(reader_1))
 			{
@@ -448,10 +396,7 @@ namespace Lab6
 			}
 
 			//Сравнение читателей книг
-			Console.WriteLine("\n\nСравнение читателей книг");
-			book_3.Display();
-			Console.WriteLine("\n\nи \n");
-			book_2.Display();
+			Console.Write("\n\nСравнение читателей книг\n{0:s}\n\nи \n\n{1:s}", book_3, book_2);
 			if (book_3.CmpReader(book_2))
 			{
 				Console.WriteLine("\n\nодин и тот же читатель.");
@@ -462,15 +407,11 @@ namespace Lab6
 			}
 
 			//Отвязка читателя
-			Console.Write("\n\nОтвязка читателя\nbook_2 ");
 			book_2.AddReader(null);
-			book_2.Display();
-			Console.WriteLine();
+			Console.Write("\n\nОтвязка читателя\nbook_2 {0:s}\n", book_2);
 
 			//Проверка принадлежности книги читателю
-			Console.WriteLine("\n\nПроверка принадлежности книги читателю");
-			book_2.Display();
-			Console.WriteLine("\n\nи \n");
+			Console.Write("\n\nПроверка принадлежности книги читателю\n{0:s}\n\nи \n\n", book_2);
 			reader_1.Display("Full_name");
 			if (book_2.Belongs(reader_1))
 			{

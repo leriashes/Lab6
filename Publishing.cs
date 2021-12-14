@@ -115,6 +115,11 @@ namespace Lab6
 			Console.Write($"{name} ({city})");
 		}
 
+		public override String ToString()
+		{
+			return name + " (" + city + ")";
+		}
+
 		//Проверка находится ли издательство в заданном городе
 		public bool IsHere(String city)
 		{
