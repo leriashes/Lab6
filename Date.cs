@@ -543,6 +543,33 @@ namespace Lab6
 
 		}
 
+		public override String ToString()
+		{
+			String result = "";
+
+			if (day < 10)
+				result += '0';
+			result += day + ".";
+			if (month < 10)
+				result += '0';
+			result += month + ".";
+			if (year < 1000)
+			{
+				result += '0';
+				if (year < 100)
+				{
+					result += '0';
+					if (year < 10)
+					{
+						result += '0';
+					}
+				}
+			}
+			result += year;
+
+			return result;
+		}
+
 		//Текущая дата
 		public Date Now()
 		{

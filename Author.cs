@@ -175,6 +175,11 @@ namespace Lab6
 			}
 		}
 
+		public override String ToString()
+		{
+			return full_name + " (" + birth + ", " + country + ")";
+		}
+
 		//Проверка родился ли автор в указанной стране
 		public bool BornIn(String country)
 		{

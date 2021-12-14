@@ -175,6 +175,11 @@ namespace Lab6
 			Console.Write($"{city}, {street} {house}, {flat}");
 		}
 
+		public override String ToString()
+		{
+			return city + ", " + street + " " + house + ", " + flat;
+		}
+
 		//Проверка совпадения города
 		public bool City(String city)
 		{

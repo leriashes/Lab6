@@ -188,6 +188,11 @@ namespace Lab6
 			}
 		}
 
+		public override String ToString()
+		{
+			return "[" + doc_number + "] " + full_name + " (Дата рождения: " + birth + ". Адрес проживания: " + address + ") ";
+		}
+
 		//Проверка является ли день днём рождения читателя
 		public bool IsBirthday(Date day)
 		{
