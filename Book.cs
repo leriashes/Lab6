@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Book
+	class Book : ClassDisplay
 	{
 		protected static int counter = 0;     //Счётчик книг
 		protected static int time = 30;		//Время, на которое можно брать книги

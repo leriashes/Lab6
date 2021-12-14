@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Publishing
+	class Publishing : ClassDisplay
 	{
 		private String name;    //Название
 		private String city;    //Город

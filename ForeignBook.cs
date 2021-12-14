@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class ForeignBook : Book
+	class ForeignBook : Book, ClassDisplay
 	{
 		private String language;
 
