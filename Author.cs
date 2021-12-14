@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Author
+	class Author : Person
 	{
-		private String full_name;   //ФИО
-		private Date birth;         //Дата рождения
 		private String country; //Страна
 
 		static Exception ex;
@@ -36,6 +34,12 @@ namespace Lab6
 			this.full_name = full_name;
 			birth = new Date(0, 0, 0, day, month, year);
 			this.country = country;
+		}
+
+		public override void Init(string full_name, Date birth_date)
+		{
+			this.full_name = full_name;
+			birth = new Date(birth_date);
 		}
 
 		//Инициализация значений всех полей
@@ -191,6 +195,11 @@ namespace Lab6
 			}
 
 			return result;
+		}
+
+		public override String About()
+		{
+			return this.ToString();
 		}
 	}
 }

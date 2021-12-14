@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Reader
+	class Reader : Person
 	{
-		private String full_name;   //ФИО
-		private Date birth;         //Дата рождения
 		private Address address;    //Адрес
 		private String doc_number;      //Номер документа, удостоверяющего личность
 
@@ -40,6 +38,12 @@ namespace Lab6
 			birth = new Date(birth_date);
 			this.address = address;
 			this.doc_number = doc_number.ToString();
+		}
+
+		public override void Init(string full_name, Date birth_date)
+		{
+			this.full_name = full_name;
+			birth = new Date(birth_date);
 		}
 
 		//Инициализация всех полей
@@ -197,6 +201,11 @@ namespace Lab6
 		public bool IsBirthday(Date day)
 		{
 			return birth.IsAnniversary(day);
+		}
+
+		public override string About()
+		{
+			return this.ToString();
 		}
 	}
 }
