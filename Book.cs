@@ -8,18 +8,18 @@ namespace Lab6
 {
 	class Book
 	{
-		private static int counter = 0;     //Счётчик книг
-		private static int time = 30;		//Время, на которое можно брать книги
+		protected static int counter = 0;     //Счётчик книг
+		protected static int time = 30;		//Время, на которое можно брать книги
 
-		private String title;           //Название книги
-		private Author author;      //Автор
-		private int pages_number;       //Количество страниц
-		private String genre;           //Жанр
-		private Reader reader;  //Читатель
-		private Publishing publishing;  //Издательство
-		private int publ_year;          //Год
-		private int id;     //ID книги
-		private Date borrow_date;       //Дата взятия книги
+		protected String title;           //Название книги
+		protected Author author;      //Автор
+		protected int pages_number;       //Количество страниц
+		protected String genre;           //Жанр
+		protected Reader reader;  //Читатель
+		protected Publishing publishing;  //Издательство
+		protected int publ_year;          //Год
+		protected int id;     //ID книги
+		protected Date borrow_date;       //Дата взятия книги
 
 		static Exception ex;
 
