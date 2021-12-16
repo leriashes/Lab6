@@ -10,6 +10,24 @@ namespace Lab6
 	{
 		static void Main(string[] args)
 		{
+			Book[] bu = new Book[4];
+			for (int i = 0; i < 4; i++)
+			{
+				bu[i] = new Book();
+			}
+			Array<Book> abook = new Array<Book>(bu);
+			abook.Read();
+			bool fg = abook.AllInLib();
+			Console.Write("\nВсе книги из массива находятся в библиотеке: ");
+			if (fg)
+			{
+				Console.Write("да.\n\n");
+			}
+			else
+			{
+				Console.Write("нет.\n\n");
+			}
+
 			//Работа с объектами класса Date
 			Console.WriteLine("Работа с объектами класса Date");
 

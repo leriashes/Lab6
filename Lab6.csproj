@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Array.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="ClassDisplay.cs" />
