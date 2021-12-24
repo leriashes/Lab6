@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-	class Book : ClassDisplay, ICloneable
+	class Book : ClassDisplay, ICloneable, IComparable
 	{
 		protected static int counter = 0;     //Счётчик книг
 		protected static int time = 30;		//Время, на которое можно брать книги
@@ -362,6 +362,16 @@ namespace Lab6
 		public bool Belongs(Reader reader)
 		{
 			return this.reader == reader;
+		}
+
+		public int CompareTo(Object obj)
+		{
+			Book b2 = (Book)obj;
+
+			if (title[0] <= b2.title[0])
+				return -1;
+			else
+				return 1;
 		}
 	}
 }

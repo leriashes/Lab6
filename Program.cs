@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,30 @@ namespace Lab6
 	{
 		static void Main(string[] args)
 		{
+			ArrayList knigki = new ArrayList();
+
+			Book b1 = new Book("Старый мир");
+			Book b2 = new Book("Новый мир");
+			ForeignBook fb1 = new ForeignBook();
+
+			knigki.Add(b1);
+			knigki.Add(fb1);
+			knigki.Add(b2);
+
+			Console.Write("Коллекция до сортировки\n\n");
+			foreach(Book bo in knigki)
+			{
+				Console.WriteLine("{0:s}\n\n", bo);
+			}
+
+			knigki.Sort();
+
+			Console.Write("Коллекция после сортировки\n\n");
+			foreach (Book bo in knigki)
+			{
+				Console.WriteLine("{0:s}\n\n", bo);
+			}
+
 			Book[] bu = new Book[4];
 			for (int i = 0; i < 4; i++)
 			{
