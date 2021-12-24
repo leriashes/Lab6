@@ -35,6 +35,22 @@ namespace Lab6
 				Console.WriteLine("{0:s}\n\n", bo);
 			}
 
+			Console.Write("Введите букву, на которую должно начинатся название книги: ");
+			String str = Console.ReadLine();
+
+			Book b3 = new Book("Сыч и ёжик");
+			Book b4 = new Book("Сорока и сыр");
+
+			knigki.Add(b3);
+			knigki.Add(b4);
+
+			Console.Write("\nКниги коллекции, удовлетворяющие запросу\n\n");
+			foreach (Book bo in knigki)
+			{
+				if (bo.ToString()[16] == str[0])
+					Console.WriteLine("{0:s}\n\n", bo);
+			}
+
 			Book[] bu = new Book[4];
 			for (int i = 0; i < 4; i++)
 			{
